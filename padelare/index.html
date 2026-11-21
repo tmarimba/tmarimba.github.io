@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Padelare – Guida e supporto</title>
+<meta name="description" content="Padelare, il segnapunti di padel per Apple Watch e iPhone: come funziona, trucchi, domande frequenti e contatti.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0B0C;--card:#1C1C1E;--line:#FFFFFF26;--orange:#FF7A1A;--link:#FF9A4D;--text:#FFFFFF;--soft:#D1D1D6;--muted:#AEAEB2;--dim:#8E8E93;--border:#3A3A3C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.55 Inter,-apple-system,system-ui,sans-serif}
+a{color:var(--link)}a:hover{color:#FFB77A}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:8px}
+img{max-width:100%;height:auto}
+.wrap{max-width:1120px;margin:0 auto;padding-left:20px;padding-right:20px}
+section[id],[id^="q-"],[id^="f-"]{scroll-margin-top:var(--head,120px)}
+.rule{max-width:1080px;margin:0 auto;border-top:2px dashed var(--line)}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;z-index:10;background:var(--orange);color:#000;padding:10px 16px;border-radius:12px}
+
+/* Menu in alto */
+header{position:sticky;top:0;z-index:5;background:#0B0B0CE6;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:2px dashed var(--line)}
+.bar{max-width:1120px;margin:0 auto;padding:6px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:0 24px}
+.brand{display:flex;align-items:center;gap:10px;min-height:44px;text-decoration:none}
+.brand img{width:32px;height:32px;border-radius:8px}
+.brand span{font-size:20px;font-weight:800;color:var(--orange)}
+.langs{margin-left:auto;display:flex;gap:2px;padding:3px;border-radius:999px;background:var(--card)}
+.langs button{min-width:44px;min-height:44px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--orange);color:#000}
+.sections{order:3;flex:1 0 100%;display:flex;gap:0 18px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px}
+.sections::-webkit-scrollbar{display:none}
+.sections a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;color:var(--soft);text-decoration:none;font-size:15px;font-weight:600;white-space:nowrap}
+.sections a:hover{color:var(--orange)}
+@media (min-width:980px){
+  .sections{order:0;flex:1 1 auto;margin:0;padding:0;gap:0 22px}
+  .langs{margin-left:0}
+}
+
+/* Cerca */
+.search{padding-top:28px}
+.search form{display:flex;flex-direction:column;gap:10px}
+.search label{font-size:14px;font-weight:800;letter-spacing:.08em;color:var(--muted)}
+.field{display:flex;align-items:center;gap:10px;height:56px;padding:0 6px 0 18px;border-radius:28px;background:var(--card);border:2px solid var(--border)}
+.field:focus-within{border-color:var(--orange)}
+.field input{flex:1 1 auto;min-width:0;height:100%;border:0;outline:0;background:transparent;color:var(--text);font:inherit;font-size:18px}
+.field input::placeholder{color:var(--dim)}
+.field input::-webkit-search-cancel-button{filter:invert(1)}
+.field button{flex:0 0 auto;height:44px;padding:0 18px;border:0;border-radius:22px;background:var(--orange);color:#000;font:inherit;font-size:16px;font-weight:800;cursor:pointer}
+#results{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+#results:empty{display:none}
+#results a{display:flex;flex-direction:column;gap:2px;min-height:44px;padding:10px 16px;border-radius:16px;background:var(--card);color:var(--text);text-decoration:none}
+#results a:hover{outline:2px solid var(--orange)}
+#results small{color:var(--orange);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+#results .none{padding:12px 16px;border-radius:16px;border:2px dashed var(--line);color:var(--soft)}
+mark{background:#FF7A1A40;color:inherit;border-radius:3px}
+
+/* Apertura */
+.hero{padding-top:48px;padding-bottom:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:48px;align-items:center}
+.hero-text{display:flex;flex-direction:column;gap:22px}
+.kicker{font-size:14px;font-weight:800;letter-spacing:.12em;color:var(--orange)}
+h1{margin:0;font-size:clamp(40px,6vw,68px);line-height:1.02;font-weight:900;letter-spacing:-.03em}
+h1 span{color:var(--orange)}
+.lead{margin:0;font-size:19px;color:var(--soft);max-width:34rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:26px;background:var(--orange);color:#000;font-size:17px;font-weight:800;text-decoration:none}
+.btn:hover{background:#FF9A4D;color:#000}
+.btn.ghost{background:transparent;border:2px solid var(--border);color:var(--text);font-weight:700}
+.btn.ghost:hover{border-color:var(--orange);color:var(--orange)}
+.note{font-size:15px;color:var(--dim)}
+.shots{display:flex;justify-content:center;align-items:flex-end;gap:20px}
+.phone{width:250px;max-width:46%;border-radius:34px;border:2px solid #2C2C2E}
+.watch{width:200px;max-width:44%;border-radius:42px;border:6px solid #2C2C2E;background:#000}
+.hero .watch{width:190px;max-width:40%;margin-bottom:24px}
+
+/* Sezioni */
+.block{padding-top:64px;padding-bottom:64px}
+h2{margin:0 0 8px;font-size:clamp(30px,5vw,36px);line-height:1.15;font-weight:900;letter-spacing:-.02em}
+.sub{margin:0 0 32px;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.steps li{background:var(--card);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.steps .n{font-size:44px;font-weight:900;line-height:1;color:var(--orange)}
+.steps strong{font-size:19px}
+.steps .d{color:var(--muted);font-size:16px}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:40px;align-items:center}
+.col{display:flex;flex-direction:column;gap:18px}
+.col h2,.col p{margin:0}
+.col>p{color:var(--soft)}
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.list li{display:flex;gap:14px;align-items:flex-start}
+.list .n{flex:0 0 32px;height:32px;border-radius:50%;border:2px dashed var(--orange);color:var(--orange);font-weight:900;display:flex;align-items:center;justify-content:center}
+.tip{margin:4px 0 0;padding:14px 16px;border-radius:16px;border:2px dashed var(--line);color:var(--muted);font-size:15px}
+.pair{display:flex;justify-content:center;align-items:flex-start;gap:20px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px}
+.feature{border:2px dashed var(--line);border-radius:24px;padding:24px}
+.feature h3{margin:0 0 10px;font-size:20px;color:var(--link)}
+.feature ul{margin:0;padding-left:20px;color:var(--soft);font-size:16px}
+.feature li{margin:4px 0}
+.stats{margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:32px;align-items:center}
+.stats .phone{width:260px;max-width:70%;justify-self:center}
+.stats h3{margin:0 0 12px;font-size:26px;font-weight:900;line-height:1.2}
+.stats p{margin:0;color:var(--soft)}
+
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px}
+.tips>div{background:var(--card);border-radius:18px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.tag{flex:0 0 auto;font-size:13px;font-weight:800;color:#000;background:var(--orange);border-radius:8px;padding:3px 8px;margin-top:2px}
+.tag.grey{color:#fff;background:var(--border)}
+
+.faq{max-width:880px}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+details{background:var(--card);border-radius:18px}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:44px;padding:16px 22px;font-size:18px;font-weight:700}
+summary::-webkit-details-marker{display:none}
+.plus{flex:0 0 auto;color:var(--orange);font-size:26px;line-height:1;transition:transform .2s}
+details[open] .plus{transform:rotate(45deg)}
+details p{margin:0;padding:0 22px 18px;color:var(--soft)}
+details.hit{outline:2px solid var(--orange)}
+
+.contact{padding-top:64px;padding-bottom:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:24px;align-items:center}
+.contact h2{margin-bottom:10px}
+.contact p{margin:0;color:var(--soft)}
+.contact .cta a{word-break:break-all}
+footer{padding-top:24px;padding-bottom:32px;border-top:2px dashed var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--dim)}
+footer a{color:var(--dim)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-t="skip">Vai al contenuto</a>
+
+<header id="head">
+<div class="bar">
+<a class="brand" href="#top"><img src="img/logo.png" alt="" width="32" height="32"><span>Padelare</span></a>
+<nav class="sections" aria-label="Sezioni" data-aria="navAria">
+<a href="#come" data-t="nav.come">Come funziona</a>
+<a href="#watch" data-t="nav.watch">Solo Watch</a>
+<a href="#funzioni" data-t="nav.funzioni">Funzioni</a>
+<a href="#trucchi" data-t="nav.trucchi">Trucchi</a>
+<a href="#domande" data-t="nav.domande">Domande</a>
+<a href="#contatti" data-t="nav.contatti">Contatti</a>
+</nav>
+<div class="langs" role="group" aria-label="Lingua · Idioma · Language">
+<button type="button" data-lang="it" lang="it" aria-label="Italiano" aria-pressed="true">IT</button>
+<button type="button" data-lang="pt" lang="pt-BR" aria-label="Português (Brasil)" aria-pressed="false">PT</button>
+<button type="button" data-lang="es" lang="es" aria-label="Español" aria-pressed="false">ES</button>
+<button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+</div>
+</div>
+</header>
+
+<main id="main">
+<section class="wrap search" aria-label="Cerca" data-aria="s.aria">
+<form role="search" id="search-form">
+<label for="cerca" data-t="s.label">CERCA NELLA GUIDA</label>
+<div class="field">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#AEAEB2" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+<input id="cerca" type="search" autocomplete="off" enterkeyhint="search" placeholder="Es. telecomando, voce, chi serve, iCloud…" data-ph="s.ph" aria-controls="results">
+<button type="submit" data-t="s.btn">Cerca</button>
+</div>
+<ul id="results" aria-live="polite"></ul>
+</form>
+</section>
+
+<section id="top" class="wrap hero">
+<div class="hero-text">
+<span class="kicker" data-t="hero.kicker">SEGNAPUNTI DI PADEL · APPLE WATCH E IPHONE</span>
+<h1 data-t="hero.h1">Pensa a giocare,<br>al punteggio<br><span>pensa Padelare.</span></h1>
+<p class="lead" data-t="hero.p">Un tocco sul Watch, sull'iPhone o sul telecomando, e Padelare tiene game, set, tie-break e servizio. Se vuoi, la voce annuncia il punteggio a tutto il campo.</p>
+<div class="cta">
+<a class="btn" href="https://apps.apple.com/app/id6823220492"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-t="hero.btn">Scarica sull'App Store</span></a>
+<span class="note" data-t="hero.note">Gratis · niente account · niente pubblicità</span>
+</div>
+</div>
+<div class="shots">
+<img class="phone" data-img="iphone-gioca" src="img/it-iphone-gioca.png" width="560" height="1217" alt="Padelare su iPhone: schermata Gioca con i giocatori in campo" data-alt="alt.iphoneGioca">
+<img class="watch" data-img="watch-punteggio" src="img/it-watch-punteggio.png" width="422" height="514" alt="Padelare su Apple Watch: punteggio della partita" data-alt="alt.watchPunteggio">
+</div>
+</section>
+
+<div class="rule" aria-hidden="true"></div>
+
+<section id="come" class="wrap block">
+<h2 class="si" data-t="come.h">Come funziona</h2>
+<p class="sub" data-t="come.sub">Quattro passi, dal campo allo storico.</p>
+<ol class="steps">
+<li class="si"><span class="n" aria-hidden="true">1</span><strong data-t="come.1t">Prepara la partita</strong><span class="d" data-t="come.1d">Metti i giocatori in campo, scegli regole e chi serve. Padelare riparte dall'ultima partita, su iPhone e Watch.</span></li>
+<li class="si"><span class="n" aria-hidden="true">2</span><strong data-t="come.2t">Segna i punti</strong><span class="d" data-t="come.2d">Dal Watch (un tocco noi, due tocchi loro), dall'iPhone o da un telecomando Bluetooth.</span></li>
+<li class="si"><span class="n" aria-hidden="true">3</span><strong data-t="come.3t">Ascolta il punteggio</strong><span class="d" data-t="come.3d">La voce lo annuncia dopo ogni punto, dall'iPhone, dal Watch o da una cassa Bluetooth.</span></li>
+<li class="si"><span class="n" aria-hidden="true">4</span><strong data-t="come.4t">Rivedi e condividi</strong><span class="d" data-t="come.4d">Storico, statistiche e un'immagine della partita da mandare agli amici.</span></li>
+</ol>
+</section>
+
+<div class="rule" aria-hidden="true"></div>
+
+<section id="watch" class="wrap block two">
+<div class="col">
+<span class="kicker" data-t="watch.kicker">IPHONE NELLA BORSA</span>
+<h2 class="si" data-t="watch.h">Una partita solo con l'Apple Watch</h2>
+<p class="si" data-t="watch.p">Non serve avere l'iPhone in campo: il Watch fa tutto da solo. La partita arriva sull'iPhone appena è di nuovo vicino.</p>
+<ol class="list">
+<li class="si"><span class="n" aria-hidden="true">1</span><span data-t="watch.1"><strong>Apri Padelare sul Watch</strong>, dall'elenco delle app o dalla complicazione sul quadrante.</span></li>
+<li class="si"><span class="n" aria-hidden="true">2</span><span data-t="watch.2"><strong>Controlla il campo</strong>: tocca un nome per cambiare giocatore, tienilo premuto per decidere chi serve. Ritrovi giocatori e regole dell'ultima partita.</span></li>
+<li class="si"><span class="n" aria-hidden="true">3</span><span data-t="watch.3"><strong>Regole, tipo e circolo</strong>: scorri con la corona sotto i pulsanti, se vuoi cambiarli.</span></li>
+<li class="si"><span class="n" aria-hidden="true">4</span><span data-t="watch.4"><strong>Tocca Inizia</strong> (o Riscalda, per scaldarti prima). Parte anche l'allenamento in Fitness.</span></li>
+<li class="si"><span class="n" aria-hidden="true">5</span><span data-t="watch.5"><strong>Segna dal polso</strong>: un tocco per noi, due per loro. La voce esce dal Watch o da una cassa Bluetooth collegata al Watch.</span></li>
+<li class="si"><span class="n" aria-hidden="true">6</span><span data-t="watch.6"><strong>Fine partita</strong>: all'ultimo punto tocca “Termina e salva”.</span></li>
+</ol>
+<p class="tip si" data-t="watch.tip">Consiglio: l'altoparlante del Watch in campo si sente poco, meglio una cassa Bluetooth collegata al Watch. Storico e statistiche si guardano sull'iPhone.</p>
+</div>
+<div class="pair">
+<img class="watch" data-img="watch-inizio" src="img/it-watch-inizio.png" width="422" height="514" alt="Apple Watch: schermata Inizio con il campo e i pulsanti Inizia e Riscalda" data-alt="alt.watchInizio" loading="lazy">
+<img class="watch" data-img="watch-punteggio" src="img/it-watch-punteggio.png" width="422" height="514" alt="Apple Watch: punteggio durante la partita" data-alt="alt.watchPunteggio2" loading="lazy">
+</div>
+</section>
+
+<div class="rule" aria-hidden="true"></div>
+
+<section id="funzioni" class="wrap block">
+<h2 class="si" data-t="fun.h" style="margin-bottom:32px">Tutte le funzioni</h2>
+<div class="grid">
+<article class="feature si" id="f-rules"><h3 data-t="fun.1h">Regole e formati</h3><ul data-t="fun.1">
+<li>Regola sul 40-40: Killer Point, un vantaggio poi Killer Point, Star Point, vantaggi illimitati</li>
+<li>Set a 6 o a 5 giochi, 1 set, 3 set, al meglio dei 3 o dei 5, super tie-break</li>
+<li>Partite a tempo, con avviso 5 minuti prima</li>
+<li>Solo tie-break a 7 o a 10 punti</li>
+<li>Riscaldamento con il suo tempo</li>
+</ul></article>
+<article class="feature si" id="f-voice"><h3 data-t="fun.2h">Voce e audio</h3><ul data-t="fun.2">
+<li>Il punteggio dopo ogni punto, come un arbitro</li>
+<li>A fine game: game del set e chi serve; set point e match point</li>
+<li>Dall'iPhone, dal Watch o da una cassa Bluetooth</li>
+<li>Italiano, portoghese (Portogallo e Brasile), spagnolo, inglese</li>
+</ul></article>
+<article class="feature si" id="f-remote"><h3 data-t="fun.3h">Telecomando</h3><ul data-t="fun.3">
+<li>Indietro = punto nostro · avanti = punto loro</li>
+<li>Play/pausa = ripeti il punteggio</li>
+<li>Due pressioni veloci = annulla l'ultimo punto</li>
+</ul></article>
+<article class="feature si" id="f-history"><h3 data-t="fun.4h">Storico e statistiche</h3><ul data-t="fun.4">
+<li>Ogni partita set per set e game per game</li>
+<li>Vittorie per mese, servizio, Killer Point vinti, record</li>
+<li>Miglior compagno, coppia più dura, testa a testa</li>
+<li>Obiettivo mensile di partite</li>
+</ul></article>
+<article class="feature si" id="f-watch"><h3 data-t="fun.5h">Apple Watch e Salute</h3><ul data-t="fun.5">
+<li>Allenamento in Fitness: calorie, battito, anelli</li>
+<li>Parte anche se avvii la partita dall'iPhone</li>
+<li>Complicazione sul quadrante per aprire Padelare</li>
+</ul></article>
+<article class="feature si" id="f-data"><h3 data-t="fun.6h">I tuoi dati</h3><ul data-t="fun.6">
+<li>Sui tuoi dispositivi e nel tuo iCloud privato</li>
+<li>Backup automatici ogni giorno, backup completo, esporta CSV</li>
+<li>Statistiche anonime solo se le attivi tu</li>
+</ul></article>
+</div>
+<div class="stats">
+<img class="phone" data-img="iphone-statistiche" src="img/it-iphone-statistiche.png" width="560" height="1217" alt="Statistiche: vittorie per mese, ultime 10 partite, servizio" data-alt="alt.iphoneStat" loading="lazy">
+<div class="si" id="f-stats">
+<h3 data-t="fun.statsH">Le statistiche che contano nel padel</h3>
+<p data-t="fun.statsP">Non solo vinte e perse: game tenuti al servizio, punti sul 40-40, Killer Point vinti, con chi vinci di più e dove. Filtra per periodo, tipo di partita, compagno e lato.</p>
+</div>
+</div>
+</section>
+
+<div class="rule" aria-hidden="true"></div>
+
+<section id="trucchi" class="wrap block">
+<h2 class="si" data-t="tr.h">Trucchi che pochi conoscono</h2>
+<p class="sub" data-t="tr.sub">Gesti e funzioni nascoste che fanno risparmiare tempo in campo.</p>
+<div class="tips">
+<div class="si"><span class="tag">WATCH</span><span data-t="tr.1">Tocca la <strong>durata</strong> in alto: la voce ripete il punteggio.</span></div>
+<div class="si"><span class="tag">WATCH</span><span data-t="tr.2">Nella schermata Inizio, <strong>tieni premuto un nome</strong>: quel giocatore serve per primo.</span></div>
+<div class="si" id="t-undo"><span class="tag">WATCH</span><span data-t="tr.3">La <strong>freccia</strong> a destra della fascia dei set annulla l'ultimo punto.</span></div>
+<div class="si"><span class="tag grey">IPHONE</span><span data-t="tr.4">Sul punteggio: <strong>scorri a sinistra</strong> per annullare, <strong>a destra</strong> per i comandi. Gira il telefono per vederlo in orizzontale.</span></div>
+<div class="si"><span class="tag grey" data-t="tr.tagWarm">RISCALDAMENTO</span><span data-t="tr.5">Puoi <strong>cambiare chi serve</strong> prima di iniziare la partita, senza ricominciare.</span></div>
+<div class="si"><span class="tag grey" data-t="tr.tagHist">STORICO</span><span data-t="tr.6"><strong>Rivincita</strong> riparte con gli stessi giocatori e regole. <strong>Aggiungi partita</strong> per inserirne una a mano.</span></div>
+</div>
+</section>
+
+<div class="rule" aria-hidden="true"></div>
+
+<section id="domande" class="wrap block faq">
+<h2 class="si" data-t="faq.h" style="margin-bottom:28px">Domande frequenti</h2>
+<div class="faq-list">
+<details id="q-nowatch" class="si"><summary><span data-t="faq.q1">Non ho un Apple Watch: posso usarla?</span><span class="plus" aria-hidden="true">+</span></summary><p data-t="faq.a1">Sì. Segni i punti toccando lo schermo dell'iPhone o con un telecomando Bluetooth. Il Watch serve solo se vuoi segnare dal polso e registrare il battito.</p></details>
+<details id="q-end" class="si"><summary><span data-t="faq.q2">Come termino una partita?</span><span class="plus" aria-hidden="true">+</span></summary><p data-t="faq.a2">Quando l'ultimo punto chiude la partita, compare “Partita vinta” (o persa) con “Termina e salva”. Per fermarti prima: “Termina” in alto sull'iPhone, o la pagina menu a sinistra sul Watch.</p></details>
+<details id="q-serve" class="si"><summary><span data-t="faq.q3">Come scelgo chi serve?</span><span class="plus" aria-hidden="true">+</span></summary><p data-t="faq.a3">Sull'iPhone da “Serve per primo”; sul Watch tieni premuto il nome, oppure scorri fino a “Serve per primo”. Durante il riscaldamento puoi ancora cambiarlo.</p></details>
+<details id="q-photo" class="si"><summary><span data-t="faq.q4">Come aggiungo la foto di un giocatore?</span><span class="plus" aria-hidden="true">+</span></summary><p data-t="faq.a4">Dalla pagina Statistiche, toccando il giocatore. I nomi invece si aggiungono direttamente in campo o da Impostazioni › Gestisci giocatori.</p></details>
+<details id="q-share" class="si"><summary><span data-t="faq.q5">Come condivido una partita?</span><span class="plus" aria-hidden="true">+</span></summary><p data-t="faq.a5">Dalla schermata di fine partita o dal dettaglio nello Storico, con “Condividi”: Padelare crea un'immagine per Storie e WhatsApp, con i soli nomi di battesimo.</p></details>
+<details id="q-iphone" class="si"><summary><span data-t="faq.q6">Cambio iPhone: perdo le partite?</span><span class="plus" aria-hidden="true">+</span></summary><p data-t="faq.a6">No, se iCloud è attivo: le partite tornano da sole. In più Padelare fa un backup automatico ogni giorno, e puoi salvare un backup completo da Impostazioni.</p></details>
+<details id="q-voice" class="si"><summary><span data-t="faq.q7">La voce sembra metallica</span><span class="plus" aria-hidden="true">+</span></summary><p data-t="faq.a7">Scarica una voce migliorata: Impostazioni dell'iPhone › Accessibilità › Contenuto letto › Voci, scegli la lingua e una voce “Migliorata” o “Premium”.</p></details>
+<details id="q-health" class="si"><summary><span data-t="faq.q8">A cosa serve il permesso Salute?</span><span class="plus" aria-hidden="true">+</span></summary><p data-t="faq.a8">A salvare la partita come allenamento (calorie, battito, anelli). Se non lo dai, Padelare funziona lo stesso, senza allenamento.</p></details>
+<details id="q-delete" class="si"><summary><span data-t="faq.q9">Come elimino una partita?</span><span class="plus" aria-hidden="true">+</span></summary><p data-t="faq.a9">Nello Storico, apri la partita e scegli “Elimina partita”. Le statistiche si aggiornano da sole.</p></details>
+</div>
+</section>
+
+<div class="rule" aria-hidden="true"></div>
+
+<section id="contatti" class="wrap contact">
+<div>
+<h2 class="si" data-t="con.h">Idee o problemi?</h2>
+<p class="si" data-t="con.p">Usa “Invia feedback” nelle Impostazioni dell'app, oppure scrivici. Leggiamo tutto.</p>
+</div>
+<div class="cta">
+<a class="btn" href="mailto:padelare.info@gmail.com">padelare.info@gmail.com</a>
+<a class="btn ghost" id="privacy-link" href="privacy/#it" data-t="con.privacy">Privacy</a>
+</div>
+</section>
+</main>
+
+<footer class="wrap">
+<span data-t="foot.1">Padelare · fatta da chi gioca a padel, per chi gioca a padel</span>
+<span data-t="foot.2">Niente account · niente pubblicità · niente tracciamento</span>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var LANGS = ["it", "pt", "es", "en"];
+  var HTML_LANG = { it: "it", pt: "pt-BR", es: "es", en: "en" };
+  var KEY = "padelare-lingua";
+  var MAIL = '<a href="mailto:padelare.info@gmail.com">padelare.info@gmail.com</a>';
+
+  // L'italiano è già nella pagina: viene letto dal documento all'avvio.
+  var T = {
+    pt: {
+      "meta.title": "Padelare – Guia e suporte",
+      "meta.desc": "Padelare, o marcador de padel para Apple Watch e iPhone: como funciona, truques, perguntas frequentes e contato.",
+      "skip": "Ir para o conteúdo",
+      "navAria": "Seções",
+      "nav.come": "Como funciona", "nav.watch": "Só Watch", "nav.funzioni": "Funções", "nav.trucchi": "Truques", "nav.domande": "Perguntas", "nav.contatti": "Contato",
+      "s.aria": "Buscar",
+      "s.label": "BUSCAR NO GUIA",
+      "s.ph": "Ex. controle, voz, quem serve, iCloud…",
+      "s.btn": "Buscar",
+      "s.none": "Nenhum resultado. Escreva para a gente: ",
+      "hero.kicker": "MARCADOR DE PADEL · APPLE WATCH E IPHONE",
+      "hero.h1": "Você joga,<br>o resultado<br><span>é com o Padelare.</span>",
+      "hero.p": "Um toque no Watch, no iPhone ou no controle, e o Padelare acompanha games, sets, tie-breaks e serviço. Se quiser, a voz anuncia o resultado para a quadra inteira.",
+      "hero.btn": "Baixar na App Store",
+      "hero.note": "Grátis · sem conta · sem anúncios",
+      "alt.iphoneGioca": "Padelare no iPhone: tela Jogar com os jogadores em quadra",
+      "alt.watchPunteggio": "Padelare no Apple Watch: resultado do jogo",
+      "come.h": "Como funciona",
+      "come.sub": "Quatro passos, da quadra ao histórico.",
+      "come.1t": "Prepare o jogo",
+      "come.1d": "Coloque os jogadores em quadra, escolha as regras e quem serve. O Padelare parte do último jogo, no iPhone e no Watch.",
+      "come.2t": "Marque os pontos",
+      "come.2d": "No Watch (um toque nós, dois toques eles), no iPhone ou com um controle Bluetooth.",
+      "come.3t": "Ouça o resultado",
+      "come.3d": "A voz anuncia depois de cada ponto, pelo iPhone, pelo Watch ou por uma caixa de som Bluetooth.",
+      "come.4t": "Reveja e compartilhe",
+      "come.4d": "Histórico, estatísticas e uma imagem do jogo para mandar aos amigos.",
+      "watch.kicker": "IPHONE NA BOLSA",
+      "watch.h": "Um jogo só com o Apple Watch",
+      "watch.p": "Não precisa do iPhone na quadra: o Watch faz tudo sozinho. O jogo chega ao iPhone assim que ele estiver por perto de novo.",
+      "watch.1": "<strong>Abra o Padelare no Watch</strong>, pela lista de apps ou pela complicação no mostrador.",
+      "watch.2": "<strong>Confira a quadra</strong>: toque num nome para trocar de jogador, toque e segure para escolher quem serve. Os jogadores e as regras do último jogo já estão lá.",
+      "watch.3": "<strong>Regras, tipo e clube</strong>: role com a Digital Crown para baixo dos botões, se quiser mudar.",
+      "watch.4": "<strong>Toque em Iniciar</strong> (ou Aquecer, para aquecer antes). O treino no Fitness também começa.",
+      "watch.5": "<strong>Marque pelo pulso</strong>: um toque para nós, dois para eles. A voz sai do Watch ou de uma caixa de som Bluetooth conectada ao Watch.",
+      "watch.6": "<strong>Fim do jogo</strong>: no último ponto, toque em “Terminar e salvar”.",
+      "watch.tip": "Dica: o alto-falante do Watch se ouve pouco na quadra; melhor uma caixa de som Bluetooth conectada ao Watch. Histórico e estatísticas ficam no iPhone.",
+      "alt.watchInizio": "Apple Watch: tela inicial com a quadra e os botões Iniciar e Aquecer",
+      "alt.watchPunteggio2": "Apple Watch: resultado durante o jogo",
+      "fun.h": "Todas as funções",
+      "fun.1h": "Regras e formatos",
+      "fun.1": "<li>Regra no 40-40: Killer Point, uma vantagem depois Killer Point, Star Point, vantagens ilimitadas</li><li>Sets de 6 ou de 5 games, 1 set, 3 sets, melhor de 3 ou de 5, super tie-break</li><li>Jogos por tempo, com aviso 5 minutos antes</li><li>Só tie-break, a 7 ou a 10 pontos</li><li>Aquecimento com o seu próprio tempo</li>",
+      "fun.2h": "Voz e áudio",
+      "fun.2": "<li>O resultado depois de cada ponto, como um árbitro</li><li>No fim de cada game: games do set e quem serve; set point e match point</li><li>Pelo iPhone, pelo Watch ou por uma caixa de som Bluetooth</li><li>Italiano, português (Portugal e Brasil), espanhol, inglês</li>",
+      "fun.3h": "Controle",
+      "fun.3": "<li>Anterior = ponto nosso · próxima = ponto deles</li><li>Play/pausa = repetir o resultado</li><li>Dois toques rápidos = anular o último ponto</li>",
+      "fun.4h": "Histórico e estatísticas",
+      "fun.4": "<li>Cada jogo set por set e game por game</li><li>Vitórias por mês, serviço, Killer Points ganhos, recordes</li><li>Melhor parceiro, dupla mais difícil, frente a frente</li><li>Objetivo mensal de jogos</li>",
+      "fun.5h": "Apple Watch e Saúde",
+      "fun.5": "<li>Treino no Fitness: calorias, batimentos, anéis</li><li>Começa mesmo se você iniciar o jogo pelo iPhone</li><li>Complicação no mostrador para abrir o Padelare</li>",
+      "fun.6h": "Seus dados",
+      "fun.6": "<li>Nos seus dispositivos e no seu iCloud privado</li><li>Cópias automáticas todo dia, cópia completa, exportar CSV</li><li>Estatísticas anônimas só se você ativar</li>",
+      "fun.statsH": "As estatísticas que importam no padel",
+      "fun.statsP": "Não só ganhos e perdidos: games de serviço mantidos, pontos no 40-40, Killer Points ganhos, com quem você mais ganha e onde. Filtre por período, tipo de jogo, parceiro e lado.",
+      "alt.iphoneStat": "Estatísticas: vitórias por mês, últimos 10 jogos, serviço",
+      "tr.h": "Truques que poucos conhecem",
+      "tr.sub": "Gestos e funções escondidas que economizam tempo na quadra.",
+      "tr.1": "Toque na <strong>duração</strong> no alto: a voz repete o resultado.",
+      "tr.2": "Na tela inicial, <strong>toque e segure um nome</strong>: esse jogador serve primeiro.",
+      "tr.3": "A <strong>seta</strong> à direita da faixa dos sets anula o último ponto.",
+      "tr.4": "No resultado: <strong>deslize para a esquerda</strong> para anular, <strong>para a direita</strong> para os comandos. Gire o celular para ver na horizontal.",
+      "tr.tagWarm": "AQUECIMENTO",
+      "tr.5": "Você pode <strong>mudar quem serve</strong> antes de começar o jogo, sem recomeçar.",
+      "tr.tagHist": "HISTÓRICO",
+      "tr.6": "<strong>Revanche</strong> recomeça com os mesmos jogadores e regras. <strong>Adicionar jogo</strong> para inserir um à mão.",
+      "faq.h": "Perguntas frequentes",
+      "faq.q1": "Não tenho Apple Watch: posso usar?",
+      "faq.a1": "Sim. Você marca os pontos tocando na tela do iPhone ou com um controle Bluetooth. O Watch só é necessário para marcar pelo pulso e registrar os batimentos.",
+      "faq.q2": "Como termino um jogo?",
+      "faq.a2": "Quando o último ponto fecha o jogo, aparece “Jogo ganho” (ou perdido) com “Terminar e salvar”. Para parar antes: “Terminar” no alto do iPhone, ou a página do menu à esquerda no Watch.",
+      "faq.q3": "Como escolho quem serve?",
+      "faq.a3": "No iPhone, em “Serve primeiro”; no Watch, toque e segure o nome ou role até “Serve primeiro”. Durante o aquecimento ainda dá para mudar.",
+      "faq.q4": "Como adiciono a foto de um jogador?",
+      "faq.a4": "Na página Estatísticas, tocando no jogador. Já os nomes se adicionam direto na quadra ou em Ajustes › Gerenciar jogadores.",
+      "faq.q5": "Como compartilho um jogo?",
+      "faq.a5": "Na tela de fim de jogo ou no detalhe do Histórico, com “Compartilhar”: o Padelare cria uma imagem para Stories e WhatsApp, só com os primeiros nomes.",
+      "faq.q6": "Troquei de iPhone: perco os jogos?",
+      "faq.a6": "Não, se o iCloud estiver ativo: os jogos voltam sozinhos. Além disso, o Padelare faz uma cópia automática todo dia, e você pode salvar uma cópia completa em Ajustes.",
+      "faq.q7": "A voz parece metálica",
+      "faq.a7": "Baixe uma voz melhor: Ajustes do iPhone › Acessibilidade › Conteúdo Falado › Vozes, escolha o idioma e uma voz “Aprimorada” ou “Premium”.",
+      "faq.q8": "Para que serve a permissão do Saúde?",
+      "faq.a8": "Para salvar o jogo como treino (calorias, batimentos, anéis). Se você não permitir, o Padelare funciona do mesmo jeito, sem treino.",
+      "faq.q9": "Como elimino um jogo?",
+      "faq.a9": "No Histórico, abra o jogo e escolha “Eliminar jogo”. As estatísticas se atualizam sozinhas.",
+      "con.h": "Ideias ou problemas?",
+      "con.p": "Use “Enviar feedback” nos Ajustes do app, ou escreva para a gente. Lemos tudo.",
+      "con.privacy": "Privacidade",
+      "foot.1": "Padelare · feito por quem joga padel, para quem joga padel",
+      "foot.2": "Sem conta · sem anúncios · sem rastreamento"
+    },
+    es: {
+      "meta.title": "Padelare – Guía y soporte",
+      "meta.desc": "Padelare, el marcador de pádel para Apple Watch y iPhone: cómo funciona, trucos, preguntas frecuentes y contacto.",
+      "skip": "Ir al contenido",
+      "navAria": "Secciones",
+      "nav.come": "Cómo funciona", "nav.watch": "Solo Watch", "nav.funzioni": "Funciones", "nav.trucchi": "Trucos", "nav.domande": "Preguntas", "nav.contatti": "Contacto",
+      "s.aria": "Buscar",
+      "s.label": "BUSCAR EN LA GUÍA",
+      "s.ph": "Ej. mando, voz, quién saca, iCloud…",
+      "s.btn": "Buscar",
+      "s.none": "Sin resultados. Escríbenos: ",
+      "hero.kicker": "MARCADOR DE PÁDEL · APPLE WATCH Y IPHONE",
+      "hero.h1": "Tú juega,<br>del marcador<br><span>se ocupa Padelare.</span>",
+      "hero.p": "Un toque en el Watch, en el iPhone o en el mando, y Padelare lleva juegos, sets, tie-breaks y saque. Si quieres, la voz canta el marcador para toda la pista.",
+      "hero.btn": "Descargar en el App Store",
+      "hero.note": "Gratis · sin cuenta · sin publicidad",
+      "alt.iphoneGioca": "Padelare en el iPhone: pantalla Jugar con los jugadores en pista",
+      "alt.watchPunteggio": "Padelare en el Apple Watch: marcador del partido",
+      "come.h": "Cómo funciona",
+      "come.sub": "Cuatro pasos, de la pista al historial.",
+      "come.1t": "Prepara el partido",
+      "come.1d": "Pon a los jugadores en pista, elige las reglas y quién saca. Padelare parte del último partido, en el iPhone y en el Watch.",
+      "come.2t": "Anota los puntos",
+      "come.2d": "Desde el Watch (un toque nosotros, dos toques ellos), desde el iPhone o con un mando Bluetooth.",
+      "come.3t": "Escucha el marcador",
+      "come.3d": "La voz lo canta después de cada punto, desde el iPhone, el Watch o un altavoz Bluetooth.",
+      "come.4t": "Repasa y comparte",
+      "come.4d": "Historial, estadísticas y una imagen del partido para mandar a los amigos.",
+      "watch.kicker": "EL IPHONE EN LA BOLSA",
+      "watch.h": "Un partido solo con el Apple Watch",
+      "watch.p": "No hace falta tener el iPhone en la pista: el Watch lo hace todo solo. El partido llega al iPhone en cuanto vuelve a estar cerca.",
+      "watch.1": "<strong>Abre Padelare en el Watch</strong>, desde la lista de apps o desde la complicación de la esfera.",
+      "watch.2": "<strong>Revisa la pista</strong>: toca un nombre para cambiar de jugador y mantenlo pulsado para elegir quién saca. Encuentras los jugadores y las reglas del último partido.",
+      "watch.3": "<strong>Reglas, tipo y club</strong>: baja con la Digital Crown por debajo de los botones, si quieres cambiarlos.",
+      "watch.4": "<strong>Toca Empezar</strong> (o Calentar, para calentar antes). También empieza el entrenamiento en Fitness.",
+      "watch.5": "<strong>Anota desde la muñeca</strong>: un toque para nosotros, dos para ellos. La voz sale del Watch o de un altavoz Bluetooth conectado al Watch.",
+      "watch.6": "<strong>Fin del partido</strong>: en el último punto, toca «Terminar y guardar».",
+      "watch.tip": "Consejo: el altavoz del Watch se oye poco en la pista; mejor un altavoz Bluetooth conectado al Watch. El historial y las estadísticas se ven en el iPhone.",
+      "alt.watchInizio": "Apple Watch: pantalla de inicio con la pista y los botones Empezar y Calentar",
+      "alt.watchPunteggio2": "Apple Watch: marcador durante el partido",
+      "fun.h": "Todas las funciones",
+      "fun.1h": "Reglas y formatos",
+      "fun.1": "<li>Regla del 40-40: Killer Point, una ventaja y luego Killer Point, Star Point, ventajas ilimitadas</li><li>Sets a 6 o a 5 juegos, 1 set, 3 sets, al mejor de 3 o de 5, super tie-break</li><li>Partidos por tiempo, con aviso 5 minutos antes</li><li>Solo tie-break a 7 o a 10 puntos</li><li>Calentamiento con su propio tiempo</li>",
+      "fun.2h": "Voz y audio",
+      "fun.2": "<li>El marcador después de cada punto, como un árbitro</li><li>Al final de cada juego: juegos del set y quién saca; set point y match point</li><li>Desde el iPhone, el Watch o un altavoz Bluetooth</li><li>Italiano, portugués (Portugal y Brasil), español, inglés</li>",
+      "fun.3h": "Mando",
+      "fun.3": "<li>Anterior = punto nuestro · siguiente = punto de ellos</li><li>Play/pausa = repetir el marcador</li><li>Dos pulsaciones rápidas = deshacer el último punto</li>",
+      "fun.4h": "Historial y estadísticas",
+      "fun.4": "<li>Cada partido set a set y juego a juego</li><li>Victorias por mes, saque, Killer Points ganados, récords</li><li>Mejor compañero, pareja más dura, cara a cara</li><li>Objetivo mensual de partidos</li>",
+      "fun.5h": "Apple Watch y Salud",
+      "fun.5": "<li>Entrenamiento en Fitness: calorías, pulso, anillos</li><li>Empieza aunque inicies el partido desde el iPhone</li><li>Complicación en la esfera para abrir Padelare</li>",
+      "fun.6h": "Tus datos",
+      "fun.6": "<li>En tus dispositivos y en tu iCloud privado</li><li>Copias automáticas cada día, copia completa, exportar CSV</li><li>Estadísticas anónimas solo si las activas tú</li>",
+      "fun.statsH": "Las estadísticas que cuentan en el pádel",
+      "fun.statsP": "No solo ganados y perdidos: juegos de saque ganados, puntos en el 40-40, Killer Points ganados, con quién ganas más y dónde. Filtra por periodo, tipo de partido, compañero y lado.",
+      "alt.iphoneStat": "Estadísticas: victorias por mes, últimos 10 partidos, saque",
+      "tr.h": "Trucos que pocos conocen",
+      "tr.sub": "Gestos y funciones escondidas que ahorran tiempo en la pista.",
+      "tr.1": "Toca la <strong>duración</strong> arriba: la voz repite el marcador.",
+      "tr.2": "En la pantalla de inicio, <strong>mantén pulsado un nombre</strong>: ese jugador saca primero.",
+      "tr.3": "La <strong>flecha</strong> a la derecha de la franja de los sets deshace el último punto.",
+      "tr.4": "En el marcador: <strong>desliza a la izquierda</strong> para deshacer y <strong>a la derecha</strong> para los controles. Gira el teléfono para verlo en horizontal.",
+      "tr.tagWarm": "CALENTAMIENTO",
+      "tr.5": "Puedes <strong>cambiar quién saca</strong> antes de empezar el partido, sin volver a empezar.",
+      "tr.tagHist": "HISTORIAL",
+      "tr.6": "<strong>Revancha</strong> vuelve a empezar con los mismos jugadores y reglas. <strong>Añadir partido</strong> para meter uno a mano.",
+      "faq.h": "Preguntas frecuentes",
+      "faq.q1": "No tengo Apple Watch: ¿puedo usarla?",
+      "faq.a1": "Sí. Anotas los puntos tocando la pantalla del iPhone o con un mando Bluetooth. El Watch solo hace falta si quieres anotar desde la muñeca y registrar el pulso.",
+      "faq.q2": "¿Cómo termino un partido?",
+      "faq.a2": "Cuando el último punto cierra el partido, aparece «Partido ganado» (o perdido) con «Terminar y guardar». Para parar antes: «Terminar» arriba en el iPhone, o la página del menú a la izquierda en el Watch.",
+      "faq.q3": "¿Cómo elijo quién saca?",
+      "faq.a3": "En el iPhone, desde «Saca primero»; en el Watch, mantén pulsado el nombre o baja hasta «Saca primero». Durante el calentamiento aún puedes cambiarlo.",
+      "faq.q4": "¿Cómo añado la foto de un jugador?",
+      "faq.a4": "Desde la página Estadísticas, tocando al jugador. Los nombres, en cambio, se añaden directamente en la pista o desde Ajustes › Gestionar jugadores.",
+      "faq.q5": "¿Cómo comparto un partido?",
+      "faq.a5": "Desde la pantalla de fin de partido o desde el detalle en el Historial, con «Compartir»: Padelare crea una imagen para Stories y WhatsApp, solo con los nombres de pila.",
+      "faq.q6": "Cambio de iPhone: ¿pierdo los partidos?",
+      "faq.a6": "No, si iCloud está activo: los partidos vuelven solos. Además, Padelare hace una copia automática cada día y puedes guardar una copia completa desde Ajustes.",
+      "faq.q7": "La voz suena metálica",
+      "faq.a7": "Descarga una voz mejor: Ajustes del iPhone › Accesibilidad › Contenido leído › Voces, elige el idioma y una voz «Mejorada» o «Premium».",
+      "faq.q8": "¿Para qué sirve el permiso de Salud?",
+      "faq.a8": "Para guardar el partido como entrenamiento (calorías, pulso, anillos). Si no lo das, Padelare funciona igual, sin entrenamiento.",
+      "faq.q9": "¿Cómo elimino un partido?",
+      "faq.a9": "En el Historial, abre el partido y elige «Eliminar partido». Las estadísticas se actualizan solas.",
+      "con.h": "¿Ideas o problemas?",
+      "con.p": "Usa «Enviar comentarios» en los Ajustes de la app, o escríbenos. Lo leemos todo.",
+      "con.privacy": "Privacidad",
+      "foot.1": "Padelare · hecha por quien juega al pádel, para quien juega al pádel",
+      "foot.2": "Sin cuenta · sin publicidad · sin rastreo"
+    },
+    en: {
+      "meta.title": "Padelare – Guide and support",
+      "meta.desc": "Padelare, the padel scorer for Apple Watch and iPhone: how it works, tips, frequently asked questions and contact.",
+      "skip": "Skip to content",
+      "navAria": "Sections",
+      "nav.come": "How it works", "nav.watch": "Watch only", "nav.funzioni": "Features", "nav.trucchi": "Tips", "nav.domande": "FAQ", "nav.contatti": "Contact",
+      "s.aria": "Search",
+      "s.label": "SEARCH THE GUIDE",
+      "s.ph": "E.g. remote, voice, who serves, iCloud…",
+      "s.btn": "Search",
+      "s.none": "No results. Write to us: ",
+      "hero.kicker": "PADEL SCORER · APPLE WATCH AND IPHONE",
+      "hero.h1": "You play.<br>Padelare<br><span>keeps the score.</span>",
+      "hero.p": "One tap on the Watch, the iPhone or a remote, and Padelare keeps track of games, sets, tie-breaks and serve. If you like, the voice calls out the score to the whole court.",
+      "hero.btn": "Download on the App Store",
+      "hero.note": "Free · no account · no ads",
+      "alt.iphoneGioca": "Padelare on iPhone: the Play screen with the players on court",
+      "alt.watchPunteggio": "Padelare on Apple Watch: the match score",
+      "come.h": "How it works",
+      "come.sub": "Four steps, from the court to your history.",
+      "come.1t": "Set up the match",
+      "come.1d": "Put the players on court, choose the rules and who serves. Padelare starts from your last match, on iPhone and Watch.",
+      "come.2t": "Score the points",
+      "come.2d": "From the Watch (one tap for us, two for them), the iPhone or a Bluetooth remote.",
+      "come.3t": "Hear the score",
+      "come.3d": "The voice calls it after every point, from the iPhone, the Watch or a Bluetooth speaker.",
+      "come.4t": "Look back and share",
+      "come.4d": "History, statistics and a match image to send to your friends.",
+      "watch.kicker": "IPHONE IN YOUR BAG",
+      "watch.h": "A match with just the Apple Watch",
+      "watch.p": "You don't need your iPhone on court: the Watch does it all. The match reaches the iPhone as soon as it's nearby again.",
+      "watch.1": "<strong>Open Padelare on the Watch</strong>, from the app list or the complication on your watch face.",
+      "watch.2": "<strong>Check the court</strong>: tap a name to change player, touch and hold it to choose who serves. The players and rules of your last match are already there.",
+      "watch.3": "<strong>Rules, type and club</strong>: scroll below the buttons with the Digital Crown if you want to change them.",
+      "watch.4": "<strong>Tap Start</strong> (or Warm up, to warm up first). The workout in Fitness starts too.",
+      "watch.5": "<strong>Score from your wrist</strong>: one tap for us, two for them. The voice comes from the Watch or from a Bluetooth speaker connected to the Watch.",
+      "watch.6": "<strong>End of the match</strong>: after the last point, tap “End and save”.",
+      "watch.tip": "Tip: the Watch speaker is hard to hear on court, a Bluetooth speaker connected to the Watch works better. History and statistics are on the iPhone.",
+      "alt.watchInizio": "Apple Watch: start screen with the court and the Start and Warm up buttons",
+      "alt.watchPunteggio2": "Apple Watch: the score during a match",
+      "fun.h": "All the features",
+      "fun.1h": "Rules and formats",
+      "fun.1": "<li>40-40 rule: Killer Point, one advantage then Killer Point, Star Point, unlimited advantages</li><li>Sets of 6 or 5 games, 1 set, 3 sets, best of 3 or 5, super tie-break</li><li>Timed matches, with a warning 5 minutes before the end</li><li>Tie-break only, to 7 or 10 points</li><li>Warm-up with its own timer</li>",
+      "fun.2h": "Voice and audio",
+      "fun.2": "<li>The score after every point, like an umpire</li><li>After each game: games in the set and who serves; set point and match point</li><li>From the iPhone, the Watch or a Bluetooth speaker</li><li>Italian, Portuguese (Portugal and Brazil), Spanish, English</li>",
+      "fun.3h": "Remote",
+      "fun.3": "<li>Previous = point for us · next = point for them</li><li>Play/pause = repeat the score</li><li>Two quick presses = undo the last point</li>",
+      "fun.4h": "History and statistics",
+      "fun.4": "<li>Every match set by set and game by game</li><li>Win rate by month, serve, Killer Points won, personal bests</li><li>Best partner, toughest pair, head to head</li><li>Monthly goal for matches</li>",
+      "fun.5h": "Apple Watch and Health",
+      "fun.5": "<li>Workout in Fitness: calories, heart rate, rings</li><li>Starts even when you begin the match on the iPhone</li><li>Complication on your watch face to open Padelare</li>",
+      "fun.6h": "Your data",
+      "fun.6": "<li>On your devices and in your private iCloud</li><li>Automatic daily backups, full backup, CSV export</li><li>Anonymous statistics only if you turn them on</li>",
+      "fun.statsH": "The statistics that matter in padel",
+      "fun.statsP": "Not just won and lost: service games held, points at 40-40, Killer Points won, who you win with most and where. Filter by period, match type, partner and side.",
+      "alt.iphoneStat": "Statistics: win rate by month, last 10 matches, serve",
+      "tr.h": "Tips few people know",
+      "tr.sub": "Hidden gestures and features that save time on court.",
+      "tr.1": "Tap the <strong>duration</strong> at the top: the voice repeats the score.",
+      "tr.2": "On the start screen, <strong>touch and hold a name</strong>: that player serves first.",
+      "tr.3": "The <strong>arrow</strong> on the right of the set strip undoes the last point.",
+      "tr.4": "On the score: <strong>swipe left</strong> to undo, <strong>right</strong> for the controls. Turn the phone to see it in landscape.",
+      "tr.tagWarm": "WARM-UP",
+      "tr.5": "You can <strong>change who serves</strong> before starting the match, without starting over.",
+      "tr.tagHist": "HISTORY",
+      "tr.6": "<strong>Rematch</strong> starts again with the same players and rules. <strong>Add match</strong> lets you enter one by hand.",
+      "faq.h": "Frequently asked questions",
+      "faq.q1": "I don't have an Apple Watch: can I use it?",
+      "faq.a1": "Yes. You score by tapping the iPhone screen or with a Bluetooth remote. You only need the Watch to score from your wrist and record your heart rate.",
+      "faq.q2": "How do I end a match?",
+      "faq.a2": "When the last point ends the match, “Match won” (or lost) appears with “End and save”. To stop earlier: “End” at the top on the iPhone, or the menu page on the left on the Watch.",
+      "faq.q3": "How do I choose who serves?",
+      "faq.a3": "On the iPhone, with “First server”; on the Watch, touch and hold the name or scroll down to “First server”. You can still change it during the warm-up.",
+      "faq.q4": "How do I add a player's photo?",
+      "faq.a4": "From the Statistics page, by tapping the player. Names, instead, are added right on the court or from Settings › Manage players.",
+      "faq.q5": "How do I share a match?",
+      "faq.a5": "From the end-of-match screen or the match details in History, with “Share”: Padelare makes an image for Stories and WhatsApp, with first names only.",
+      "faq.q6": "New iPhone: will I lose my matches?",
+      "faq.a6": "No, if iCloud is on: your matches come back by themselves. Padelare also makes an automatic backup every day, and you can save a full backup from Settings.",
+      "faq.q7": "The voice sounds robotic",
+      "faq.a7": "Download a better voice: iPhone Settings › Accessibility › Spoken Content › Voices, choose the language and an “Enhanced” or “Premium” voice.",
+      "faq.q8": "What is the Health permission for?",
+      "faq.a8": "To save the match as a workout (calories, heart rate, rings). Without it, Padelare works just the same, only without the workout.",
+      "faq.q9": "How do I delete a match?",
+      "faq.a9": "In History, open the match and choose “Delete match”. Statistics update by themselves.",
+      "con.h": "Ideas or problems?",
+      "con.p": "Use “Send feedback” in the app's Settings, or write to us. We read everything.",
+      "con.privacy": "Privacy",
+      "foot.1": "Padelare · made by a padel player, for padel players",
+      "foot.2": "No account · no ads · no tracking"
+    }
+  };
+
+  // Italiano letto dalla pagina.
+  var it = {
+    "meta.title": document.title,
+    "meta.desc": document.querySelector('meta[name="description"]').content,
+    "s.none": "Nessun risultato. Scrivici: "
+  };
+  document.querySelectorAll("[data-t]").forEach(function (el) { it[el.dataset.t] = el.innerHTML; });
+  document.querySelectorAll("[data-alt]").forEach(function (el) { it[el.dataset.alt] = el.alt; });
+  document.querySelectorAll("[data-ph]").forEach(function (el) { it[el.dataset.ph] = el.placeholder; });
+  document.querySelectorAll("[data-aria]").forEach(function (el) { it[el.dataset.aria] = el.getAttribute("aria-label"); });
+  T.it = it;
+
+  var current = "it";
+
+  function tr(key) { return (T[current] && T[current][key] != null) ? T[current][key] : it[key]; }
+
+  function apply(lang) {
+    current = lang;
+    document.documentElement.lang = HTML_LANG[lang];
+    document.title = tr("meta.title");
+    document.querySelector('meta[name="description"]').content = tr("meta.desc");
+    document.querySelectorAll("[data-t]").forEach(function (el) { el.innerHTML = tr(el.dataset.t); });
+    document.querySelectorAll("[data-alt]").forEach(function (el) { el.alt = tr(el.dataset.alt); });
+    document.querySelectorAll("[data-ph]").forEach(function (el) { el.placeholder = tr(el.dataset.ph); });
+    document.querySelectorAll("[data-aria]").forEach(function (el) { el.setAttribute("aria-label", tr(el.dataset.aria)); });
+    document.querySelectorAll("[data-img]").forEach(function (el) {
+      var src = "img/" + lang + "-" + el.dataset.img + ".png";
+      if (el.getAttribute("src") !== src) {
+        el.onerror = function () { el.onerror = null; el.src = "img/it-" + el.dataset.img + ".png"; };
+        el.src = src;
+      }
+    });
+    document.querySelectorAll("[data-lang]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+    document.getElementById("privacy-link").href = "privacy/#" + lang;
+    buildIndex();
+    var q = document.getElementById("cerca").value;
+    if (q.trim()) search(q); else clearResults();
+  }
+
+  // Lingua: #it #pt #es #en, poi la scelta salvata, poi il browser; altrimenti inglese.
+  function fromHash() {
+    var h = location.hash.slice(1).toLowerCase();
+    return LANGS.indexOf(h) >= 0 ? h : null;
+  }
+  function saved() {
+    try { var s = localStorage.getItem(KEY); return LANGS.indexOf(s) >= 0 ? s : null; } catch (e) { return null; }
+  }
+  function fromBrowser() {
+    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+    for (var i = 0; i < list.length; i++) {
+      var base = String(list[i]).toLowerCase().split("-")[0];
+      if (LANGS.indexOf(base) >= 0) return base; // pt-PT e pt-BR → pt (brasiliano)
+    }
+    return "en";
+  }
+  function remember(lang) { try { localStorage.setItem(KEY, lang); } catch (e) {} }
+
+  document.querySelectorAll("[data-lang]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var lang = b.dataset.lang;
+      remember(lang);
+      if (fromHash()) history.replaceState(null, "", "#" + lang);
+      apply(lang);
+    });
+  });
+
+  // Cerca: senza maiuscole né accenti.
+  function norm(s) {
+    return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[“”«»"'’]/g, " ");
+  }
+  function esc(s) {
+    return s.replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; });
+  }
+  var index = [];
+  function buildIndex() {
+    index = [];
+    document.querySelectorAll(".si").forEach(function (el) {
+      var section = el.closest("section");
+      var target = el.id || (el.closest("[id]") && el.closest("[id]").id) || section.id;
+      var text = el.textContent.replace(/\s+/g, " ").trim();
+      var titleEl = el.matches(".tips > div") ? el.lastElementChild
+        : el.querySelector("summary [data-t], h3, li strong");
+      var title = (titleEl || el).textContent.replace(/\s+/g, " ").trim();
+      var nav = document.querySelector('.sections a[href="#' + section.id + '"]');
+      index.push({ target: target, title: title, section: nav ? nav.textContent : "", hay: norm(text), head: norm(title) });
+    });
+  }
+  function clearResults() { document.getElementById("results").innerHTML = ""; }
+  function search(q) {
+    var out = document.getElementById("results");
+    var words = norm(q).split(/\s+/).filter(Boolean);
+    if (!words.length) { clearResults(); return; }
+    var hits = index.filter(function (it) {
+      return words.every(function (w) { return it.hay.indexOf(w) >= 0; });
+    });
+    // Prima quelli che hanno le parole nel titolo (domande, titoli dei passi).
+    function inHead(it) {
+      if (!words.every(function (w) { return it.head.indexOf(w) >= 0; })) return 2;
+      return it.target.indexOf("q-") === 0 ? 0 : 1;
+    }
+    hits = hits.map(function (it, i) { return { it: it, k: inHead(it), i: i }; })
+      .sort(function (a, b) { return a.k - b.k || a.i - b.i; })
+      .map(function (h) { return h.it; });
+    if (!hits.length) {
+      out.innerHTML = '<li class="none">' + esc(tr("s.none")) + MAIL + "</li>";
+      return;
+    }
+    out.innerHTML = hits.slice(0, 8).map(function (it) {
+      var t = it.title.length > 120 ? it.title.slice(0, 117) + "…" : it.title;
+      return '<li><a href="#' + it.target + '"><small>' + esc(it.section) + "</small><span>" + esc(t) + "</span></a></li>";
+    }).join("");
+  }
+  var timer;
+  var input = document.getElementById("cerca");
+  input.addEventListener("input", function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () { search(input.value); }, 120);
+  });
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { input.value = ""; clearResults(); }
+  });
+  document.getElementById("search-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    search(input.value);
+    var first = document.querySelector("#results a");
+    if (first) first.focus();
+  });
+
+  // Un link a una domanda la apre.
+  function openTarget(id) {
+    var el = id && document.getElementById(id);
+    if (!el) return;
+    if (el.tagName === "DETAILS") {
+      el.open = true;
+      el.classList.add("hit");
+      setTimeout(function () { el.classList.remove("hit"); }, 1600);
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (a) openTarget(a.getAttribute("href").slice(1));
+  });
+  window.addEventListener("hashchange", function () {
+    var lang = fromHash();
+    if (lang) { apply(lang); return; }
+    openTarget(location.hash.slice(1));
+  });
+
+  // Altezza del menu, per non coprire i titoli.
+  function headHeight() {
+    document.documentElement.style.setProperty("--head", (document.getElementById("head").offsetHeight + 12) + "px");
+  }
+  window.addEventListener("resize", headHeight);
+
+  apply(fromHash() || saved() || fromBrowser());
+  headHeight();
+  openTarget(location.hash.slice(1));
+})();
+</script>
+</body>
+</html>
